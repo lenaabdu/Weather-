@@ -1,3 +1,7 @@
-This app  show Real time weather of your Current location & Second, it  shows the Weather conditions of a particular city when you search the particular city.
-I have used Open Weather Map API.
-and  also I have used react-animated-weather,moment-timezone,axios npm  package.
+Weather App :-
+This project is a Weather forecast app that shows the weather forecast of your Current location and the supplied city. 
+It shows a time, date, city,country ,image indicating the weather conditions ,and a basic description of the weather for the current location using the OpenWeather API to retrieve forecast information.
+also It display temperature, humidity, wind Speed Visibility,image  and a basic description for the city supplied by user.
+
+in the field provided, type the city of which you want to know the current weather condition. 
+on the main screen provided, you will find the current weather status in your location, automatically.
