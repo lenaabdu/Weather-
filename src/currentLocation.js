@@ -61,11 +61,11 @@ class Weather extends React.Component {
   };
 
   componentDidMount() {
-    if (navigator.geolocation) {
+    if (navigator.geolocation) {// the Geolocation API provides access to geographical location information from device
       this.getPosition()
         //If user allow location service then will fetch data & send it to get-weather function.
         .then((position) => {
-          this.getWeather(position.coords.latitude, position.coords.longitude);
+          this.getWeather(position.coords.latitude, position.coords.longitude); // fetch the data by passing latitude and  longitude value.
         })
         .catch((err) => {
           //If user denied location service then standard location weather will le shown on basis of latitude & latitude.
@@ -93,14 +93,14 @@ class Weather extends React.Component {
   };
   getWeather = async (lat, lon) => {
     const api_call = await fetch(
-      `${apiKeys.base}weather?lat=${lat}&lon=${lon}&units=metric&APPID=${apiKeys.key}`
+      `${apiKeys.base}weather?lat=${lat}&lon=${lon}&units=metric&APPID=${apiKeys.key}` // fetch wheather data by use api call  
     );
     const data = await api_call.json();
     this.setState({
       lat: lat,
       lon: lon,
-      city: data.name,
-      temperatureC: Math.round(data.main.temp),
+      city: data.name, // city name 
+      temperatureC: Math.round(data.main.temp), // temperature 
       temperatureF: Math.round(data.main.temp * 1.8 + 32),
       humidity: data.main.humidity,
       main: data.weather[0].main,
