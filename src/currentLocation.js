@@ -100,11 +100,11 @@ class Weather extends React.Component {
       lat: lat,
       lon: lon,
       city: data.name, // city name 
-      temperatureC: Math.round(data.main.temp), // temperature 
-      temperatureF: Math.round(data.main.temp * 1.8 + 32),
-      humidity: data.main.humidity,
-      main: data.weather[0].main,
-      country: data.sys.country,
+      temperatureC: Math.round(data.main.temp), // temperature centage 
+      temperatureF: Math.round(data.main.temp * 1.8 + 32), // temperature fahrenheit
+      humidity: data.main.humidity, // humidity 
+      main: data.weather[0].main, // wheather icon 
+      country: data.sys.country, // country 
     
     });
     switch (this.state.main) {
@@ -146,8 +146,8 @@ class Weather extends React.Component {
         <React.Fragment>
           <div className="city">
             <div className="title">
-              <h2>{this.state.city}</h2>
-              <h3>{this.state.country}</h3>
+              <h2>{this.state.city}</h2> // display current city 
+              <h3>{this.state.country}</h3> // display current country 
             </div>
             <div className="mb-icon">
               {" "}
@@ -157,7 +157,7 @@ class Weather extends React.Component {
                 size={defaults.size}
                 animate={defaults.animate}
               />
-              <p>{this.state.main}</p>
+              <p>{this.state.main}</p> // display weather icon 
            
             </div>
             
@@ -167,18 +167,18 @@ class Weather extends React.Component {
                 <div id="txt"></div>
                 
                 <div className="current-time">
-                  <Clock format="HH:mm:ss" interval={1000} ticking={true} />
-                </div>
-                <div className="current-date">{dateBuilder(new Date())}</div>
+                  <Clock format="HH:mm:ss" interval={1000} ticking={true} /> 
+                </div> // current time 
+                <div className="current-date">{dateBuilder(new Date())}</div> // current date 
               </div>
               <div className="temperature">
                 <p>
-                 {this.state.temperatureC}°<span>C</span>
+                 {this.state.temperatureC}°<span>C</span> // current temperature 
                 </p>
               </div>
             </div>
           </div>
-          <Forcast icon={this.state.icon} weather={this.state.main}   />
+          <Forcast icon={this.state.icon} weather={this.state.main}   />  // display forecast for the city supplied by the user(temperature, humidity, wind Speed Visibility,image and a basic description)
         </React.Fragment>
       );
     } else {
