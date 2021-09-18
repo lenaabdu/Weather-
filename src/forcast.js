@@ -8,12 +8,12 @@ function Forcast(props) {
   const [error, setError] = useState(""); // variable in case the name of the city is an error
   const [weather, setWeather] = useState({}); // variable for the weather 
 
-  const search = (city) => {
+  const search = (city) => { // fetch weather data for the city supplied by the user.
     axios
       .get(
         `${apiKeys.base}weather?q=${
           city != "[object Object]" ? city : query
-        }&units=metric&APPID=${apiKeys.key}`
+        }&units=metric&APPID=${apiKeys.key}` // api call 
       )
       .then((response) => {
         setWeather(response.data);
@@ -26,7 +26,7 @@ function Forcast(props) {
         setError({ message: "Not Found", query: query });
       });
   };
-  function checkTime(i) {
+  function checkTime(i) { 
     if (i < 10) {
       i = "0" + i;
     } // add zero in front of numbers < 10
@@ -39,7 +39,7 @@ function Forcast(props) {
     animate: true,
   };
 
-  useEffect(() => {
+  useEffect(() => { // pass name of random city
     search("Cork");
   }, []);
 
@@ -62,7 +62,7 @@ function Forcast(props) {
             placeholder="Search any city"
             onChange={(e) => setQuery(e.target.value)}
             value={query}
-          />
+          />      // when user enter any city name into search filed then we will store that data into setQuery
           <div className="img-box">
             {" "}
             <img
@@ -77,15 +77,15 @@ function Forcast(props) {
               {" "}
               <li className="cityHead">
                 <p>
-                  {weather.name}, {weather.sys.country}
+                  {weather.name}, {weather.sys.country}  // city name , country name 
                 </p>
                 <img
                   className="temp"
-                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} // weather icon 
                 />
               </li>
               <li>
-                Temperature{" "}
+                Temperature{" "} //  display temperature 
                 <span className="temp">
                   {Math.round(weather.main.temp)}°c ({weather.weather[0].main})
                 </span>
@@ -93,19 +93,19 @@ function Forcast(props) {
           
           
               <li>
-                Humidity{" "}
+                Humidity{" "} // display humidity 
                 <span className="temp">
                   {Math.round(weather.main.humidity)}%
                 </span>
               </li>
               <li>
-                Visibility{" "}
+                Visibility{" "} // display visibility 
                 <span className="temp">
                   {Math.round(weather.visibility)} mi
                 </span>
               </li>
               <li>
-                Wind Speed{" "}
+                Wind Speed{" "} // display wind speed 
                 <span className="temp">
                   {Math.round(weather.wind.speed)} Km/h
                 </span>
