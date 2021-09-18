@@ -6,9 +6,7 @@ in the field provided, type the city of which you want to know the current weath
 on the main screen provided, you will find the current weather status in your location, automatically.
 
 A-Follow Below Instructions to download the code file:
-   1- On GitHub, navigate to the main page of the repository.
-   2- Above the list of files, click Code.
-   3- To clone the repository using HTTPS, under "Clone with HTTPS", click ![image](https://user-images.githubusercontent.com/54982546/133905176-8b1ee8f6-e7f4-4d3a-9845-6a3a9f84a0ce.png)
+   c![image](https://user-images.githubusercontent.com/54982546/133905176-8b1ee8f6-e7f4-4d3a-9845-6a3a9f84a0ce.png)
    To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH, then click ![image](https://user-images.githubusercontent.com/54982546/133905194-a9ab76cf-315e-408a-bbd0-9b981e9f2690.png)
    To clone a repository using GitHub CLI, click Use GitHub CLI, then click ![image](https://user-images.githubusercontent.com/54982546/133905198-c87b0df4-9b32-4f8b-9d70-809608323790.png)
    4- Open Git Bash.
