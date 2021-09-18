@@ -107,7 +107,7 @@ class Weather extends React.Component {
       country: data.sys.country, // country 
     
     });
-    switch (this.state.main) {
+    switch (this.state.main) { //  weather icon according to climate condition 
       case "Haze":
         this.setState({ icon: "CLEAR_DAY" });
         break;
