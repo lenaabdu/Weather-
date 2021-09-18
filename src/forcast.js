@@ -4,9 +4,9 @@ import apiKeys from "./apiKeys";
 import ReactAnimatedWeather from "react-animated-weather";
 
 function Forcast(props) {
-  const [query, setQuery] = useState("");
-  const [error, setError] = useState("");
-  const [weather, setWeather] = useState({});
+  const [query, setQuery] = useState(""); // variable for the city supplied by the user
+  const [error, setError] = useState(""); // variable in case the name of the city is an error
+  const [weather, setWeather] = useState({}); // variable for the weather 
 
   const search = (city) => {
     axios
