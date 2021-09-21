@@ -62,7 +62,8 @@ function Forcast(props) {
             placeholder="Search any city"
             onChange={(e) => setQuery(e.target.value)}
             value={query}
-          />      // when user enter any city name into search filed then we will store that data into setQuery
+          />     
+            {/* when user enter any city name into search filed then we will store that data into setQuery */}
           <div className="img-box">
             {" "}
             <img
@@ -76,36 +77,41 @@ function Forcast(props) {
             <div>
               {" "}
               <li className="cityHead">
+               {/* city name , country name  */}
                 <p>
-                  {weather.name}, {weather.sys.country}  // city name , country name 
+                  {weather.name}, {weather.sys.country}  
                 </p>
+                 {/* weather icon  */}
                 <img
                   className="temp"
-                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} // weather icon 
+                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                 />
               </li>
+                {/* display temperature */}
               <li>
-                Temperature{" "} //  display temperature 
+                Temperature{" "}  
                 <span className="temp">
                   {Math.round(weather.main.temp)}°c ({weather.weather[0].main})
                 </span>
               </li>
           
-          
+               {/* display humidity  */}
               <li>
-                Humidity{" "} // display humidity 
+                Humidity{" "} 
                 <span className="temp">
                   {Math.round(weather.main.humidity)}%
                 </span>
               </li>
+               {/* display visibility  */}
               <li>
-                Visibility{" "} // display visibility 
+                Visibility{" "} 
                 <span className="temp">
                   {Math.round(weather.visibility)} mi
                 </span>
               </li>
+               {/* display wind speed */}
               <li>
-                Wind Speed{" "} // display wind speed 
+                Wind Speed{" "}  
                 <span className="temp">
                   {Math.round(weather.wind.speed)} Km/h
                 </span>

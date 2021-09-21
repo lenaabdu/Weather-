@@ -146,8 +146,10 @@ class Weather extends React.Component {
         <React.Fragment>
           <div className="city">
             <div className="title">
-              <h2>{this.state.city}</h2> // display current city 
-              <h3>{this.state.country}</h3> // display current country 
+               {/* display current city */}
+              <h2>{this.state.city}</h2>
+              {/*  display current country  */}
+              <h3>{this.state.country}</h3> 
             </div>
             <div className="mb-icon">
               {" "}
@@ -157,7 +159,8 @@ class Weather extends React.Component {
                 size={defaults.size}
                 animate={defaults.animate}
               />
-              <p>{this.state.main}</p> // display weather icon 
+              {/* display weather icon  */}
+              <p>{this.state.main}</p> 
            
             </div>
             
@@ -165,20 +168,23 @@ class Weather extends React.Component {
             
               <div className="dmy">
                 <div id="txt"></div>
-                
+                 {/* current time  */}
                 <div className="current-time">
                   <Clock format="HH:mm:ss" interval={1000} ticking={true} /> 
-                </div> // current time 
-                <div className="current-date">{dateBuilder(new Date())}</div> // current date 
+                </div> 
+                 {/* current date  */}
+                <div className="current-date">{dateBuilder(new Date())}</div> 
               </div>
               <div className="temperature">
+               {/* current temperature  */}
                 <p>
-                 {this.state.temperatureC}°<span>C</span> // current temperature 
+                 {this.state.temperatureC}°<span>C</span> 
                 </p>
               </div>
             </div>
           </div>
-          <Forcast icon={this.state.icon} weather={this.state.main}   />  // display forecast for the city supplied by the user(temperature, humidity, wind Speed Visibility,image and a basic description)
+           {/* display forecast for the city supplied by the user(temperature, humidity, wind Speed Visibility,image and a basic description) */}
+          <Forcast icon={this.state.icon} weather={this.state.main}   />  
         </React.Fragment>
       );
     } else {
